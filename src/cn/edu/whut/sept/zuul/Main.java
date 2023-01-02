@@ -1,3 +1,6 @@
+/**
+ * 该类创建Game的实例并调用它的play方法
+ */
 package cn.edu.whut.sept.zuul;
 
 public class Main {
