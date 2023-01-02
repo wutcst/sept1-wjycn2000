@@ -1,4 +1,4 @@
-##### 样例工程代码结构-UML类图描
+##### 样例工程代码结构-UML类图描述
 
 ```mermaid
 classDiagram
