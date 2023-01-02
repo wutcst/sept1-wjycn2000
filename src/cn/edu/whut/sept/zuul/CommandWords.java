@@ -20,7 +20,7 @@ public class CommandWords
 
     /**
      * 判断一个字符串是否是有效命令
-     * @param 输入的字符串
+     * @param aString
      * @return 如果是有效命令返回真；否则返回假
      */
     public boolean isCommand(String aString)
