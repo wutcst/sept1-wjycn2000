@@ -1,4 +1,4 @@
-##### 样例工程代码结构-UML类图描述
+##### 样例工程代码结构-UML类图描
 
 ```mermaid
 classDiagram
@@ -30,7 +30,20 @@ class Room{
 	+getExit(direction) Room
 }
 class Game{
-
+	-Parser paser
+	-Room currentRoom
+	+createRooms()
+	+play()
+	+printWelcome()
+	+processCommand(command) boolean
+	+printHelp()
+	+goRoom(command)
+	+quit(command)
 }
+Parser <-- CommandWords
+Game *-- Parser
+Game *-- Room
+Game <.. Command
+Room <-- Room
 ```
 
