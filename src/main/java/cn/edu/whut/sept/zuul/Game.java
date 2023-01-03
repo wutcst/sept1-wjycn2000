@@ -173,7 +173,7 @@ public class Game
         start = new Room("at the start point.");
         roadside = new Room("on a narrow road. You see a lantern hanging by the road.");
         lockRoom = new Room("in a room that has a magic lock. There are 3 holes on it");
-        bambooForest = new Room("in a bamboo forest. There is a lake in the east. There is something shinny" +
+        bambooForest = new Room("in a bamboo forest. There is a lake in the west. There is something shinny" +
                 " under the lake.");
         lake = new Room("in the middle of lake. You find some crystals under the lake");
         mushroomField1 = new Room("in the middle of a mushroom field. You spot a strange red mushroom");
