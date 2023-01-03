@@ -24,6 +24,7 @@ public class Game
     private Room lastRoom;
     private List<Portal> portals;
     private Player player;
+    private List<Constraint> constraints;
 
     /**
      * 创建游戏并初始化内部数据和解析器.
@@ -31,6 +32,7 @@ public class Game
     public Game()
     {
         portals = new LinkedList<>();
+        constraints = new LinkedList<>();
         createRooms();
         parser = new Parser();
 
@@ -72,6 +74,29 @@ public class Game
         return player;
     }
 
+    public List<Constraint> getConstraints() {
+        return constraints;
+    }
+
+    public void addConstraint(Constraint constraint){
+        constraints.add(constraint);
+    }
+
+    public void removeConstraint(Constraint constraint){
+        constraints.remove(constraint);
+    }
+
+    public void removeConstraint(){
+        for(Constraint constraint : getConstraints()){
+            if(constraint.getFrom().equals(currentRoom)){
+                removeConstraint(constraint);
+                break;
+            }
+        }
+    }
+
+
+
     /**
      * 创建所有房间对象并连接其出口用以构建迷宫.
      */
@@ -102,7 +127,7 @@ public class Game
         treasureRoom = new Room("in a treasure room. There are boxes filled with countless coins.");
         cave2 = new Room("in a creepy cave. There is a skeleton lying in the corner. A sword is held tightly in his " +
                 "hand");
-        mushroomField2 = new Room("in the middle of a mushroom field. You spot a strange red mushroom");
+        mushroomField2 = new Room("in the middle of a lush mushroom field. You spot a strange red mushroom.");
         cave3 = new Room("in a dark cave. The lantern in your hand gives a little light. You see a piece of crystal " +
                 "shinning in the darkness");
         hole = new Room("in a hole. The hole leads you to an unknown place.");
@@ -111,6 +136,10 @@ public class Game
         //add portals
         addPortal(new Portal(hole,bambooForest));
 
+        //add constraints
+        addConstraint(new Constraint(bambooForest, lake));
+        addConstraint(new Constraint(lockRoom, treasureRoom));
+        addConstraint(new Constraint(mushroomField2, cave3));
         // add items
         roadside.addItem(new Item("lantern","It provides a vague light",6));
         lake.addItem(new Item("crystal","A shinny red stone", 1));

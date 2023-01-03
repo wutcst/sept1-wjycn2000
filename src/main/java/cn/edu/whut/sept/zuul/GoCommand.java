@@ -1,5 +1,7 @@
 package cn.edu.whut.sept.zuul;
 
+import java.util.List;
+
 public class GoCommand extends Command implements ICommand{
     /**
      * 根据输入的第一个单词和第二个单词生成命令
@@ -24,10 +26,31 @@ public class GoCommand extends Command implements ICommand{
 
 
 
+
         if (nextRoom == null) {
             System.out.println("There is no door!");
         }
         else {
+            //检查约束
+            if(!game.getConstraints().isEmpty()){
+                for(Constraint constraint : game.getConstraints()){
+                    if(constraint.getFrom().equals(currentRoom) && constraint.getTo().equals(nextRoom)){
+                        if(nextRoom.getShortDescription().indexOf("coins")!=-1){
+                            System.out.println("The door has not opened.");
+                            return false;
+                        }
+                        else if(nextRoom.getShortDescription().indexOf("lake")!=-1){
+                            System.out.println("need a boat..");
+                            return false;
+                        }else if(nextRoom.getShortDescription().indexOf("dark")!=-1){
+                            System.out.println("It's too dark. You need light.");
+                            return false;
+                        }
+                    }
+                }
+            }
+
+
             game.setLastRoom(currentRoom);
 
 

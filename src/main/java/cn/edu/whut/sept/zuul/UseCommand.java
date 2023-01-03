@@ -1,5 +1,7 @@
 package cn.edu.whut.sept.zuul;
 
+import java.util.List;
+
 public class UseCommand extends Command implements ICommand{
     public UseCommand() {
         super();
@@ -21,6 +23,12 @@ public class UseCommand extends Command implements ICommand{
 
             if(game.getCurrentRoom().getShortDescription().indexOf("bamboo")!=-1){
                 System.out.println("You use sword to cut bamboo and make a boat.");
+                for(Constraint constraint : game.getConstraints()){
+                    if(constraint.getFrom().equals(game.getCurrentRoom())){
+                        game.removeConstraint(constraint);
+                        break;
+                    }
+                }
 
             }else{
                 System.out.println("It doesn't work..");
@@ -42,7 +50,43 @@ public class UseCommand extends Command implements ICommand{
                 System.out.println("It doesn't work");
             }
         }
+        else if(getSecondWord().equals("crystal")){
+            int numberOfCrystals = 0;
+            List<Item> itemList = game.getPlayer().getItemList();
+            for(Item item: itemList){
+                if(item.getName().equals("crystal")){
+                    numberOfCrystals++;
+                }
+            }
+            if(numberOfCrystals<3){
+                System.out.println("collect more crystals..");
+                return false;
+            }else {
+                System.out.println("You place the crystals in the lock. The door opens.");
+                for(Constraint constraint : game.getConstraints()){
+                    if(constraint.getFrom().equals(game.getCurrentRoom())){
+                        game.removeConstraint(constraint);
+                        break;
+                    }
+                }
+
+            }
+        }
+        else if(getSecondWord().equals("lantern")){
+            if(!game.getPlayer().hasItem("lantern")){
+                System.out.println("You do no have this item..");
+                return false;
+            }
+
+            if(game.getCurrentRoom().getShortDescription().indexOf("lush")!=-1){
+                System.out.println("You take out the lantern. It lets you see things in the darkness.");
+                game.removeConstraint();
+            }else{
+                System.out.println("It doesn't work..");
+            }
+        }
 
         return false;
     }
+
 }
