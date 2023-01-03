@@ -24,6 +24,7 @@ public class Player {
         this.currentRoom = game.getCurrentRoom();
         this.maxWeight = 10.0f;
         this.itemList = new LinkedList<>();
+        game.setPlayer(this);
     }
 
     /**
@@ -96,6 +97,7 @@ public class Player {
      */
     public void getItem(Item item){
         itemList.add(item);
+        weight += item.getWeight();
     }
 
     /**
@@ -104,5 +106,6 @@ public class Player {
      */
     public void loseItem(Item item){
         itemList.remove(item);
+        weight -= item.getWeight();
     }
 }

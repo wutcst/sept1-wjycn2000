@@ -23,6 +23,7 @@ public class Game
     private Room currentRoom;
     private Room lastRoom;
     private List<Portal> portals;
+    private Player player;
 
     /**
      * 创建游戏并初始化内部数据和解析器.
@@ -63,6 +64,14 @@ public class Game
         portals.add(portal);
     }
 
+    public void setPlayer(Player player){
+        this.player = player;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
     /**
      * 创建所有房间对象并连接其出口用以构建迷宫.
      */
@@ -86,7 +95,7 @@ public class Game
         addPortal(new Portal(theater,lab));
 
         // add items
-        outside.addItem(new Item("shovel","A tool for digging",3));
+        outside.addItem(new Item("shovel","A tool for digging",10));
         outside.addItem(new Item("lantern","It provides a vague light",2));
 
         // initialise room exits

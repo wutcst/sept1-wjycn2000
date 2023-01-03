@@ -16,7 +16,7 @@ public class LookCommand extends Command implements ICommand{
         }
         System.out.println("After a careful search, you found: ");
         for(Item item : itemList){
-            System.out.println(item.getDescription() + " " + item.getWeight() + "kg");
+            System.out.println(item.getName() + "\t-"+item.getDescription() + "\t" + item.getWeight() + "kg");
         }
         return false;
     }
