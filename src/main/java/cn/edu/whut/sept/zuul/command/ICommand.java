@@ -1,7 +1,9 @@
 /**
  * 命令的接口
  */
-package cn.edu.whut.sept.zuul;
+package cn.edu.whut.sept.zuul.command;
+
+import cn.edu.whut.sept.zuul.Game;
 
 public interface ICommand {
     /**

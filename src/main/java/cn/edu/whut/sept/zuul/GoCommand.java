@@ -3,9 +3,9 @@
  */
 package cn.edu.whut.sept.zuul;
 
-import java.util.List;
+import cn.edu.whut.sept.zuul.command.ICommand;
 
-public class GoCommand extends Command implements ICommand{
+public class GoCommand extends Command implements ICommand {
     /**
      * 根据输入的第一个单词和第二个单词生成命令
      */

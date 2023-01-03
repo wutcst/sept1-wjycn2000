@@ -3,7 +3,9 @@
  */
 package cn.edu.whut.sept.zuul;
 
-public class HelpCommand extends Command implements ICommand{
+import cn.edu.whut.sept.zuul.command.ICommand;
+
+public class HelpCommand extends Command implements ICommand {
     /**
      * 根据输入的第一个单词和第二个单词生成命令
      */

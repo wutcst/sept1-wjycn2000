@@ -3,9 +3,11 @@
  */
 package cn.edu.whut.sept.zuul;
 
+import cn.edu.whut.sept.zuul.command.ICommand;
+
 import java.util.List;
 
-public class EatCommand extends Command implements ICommand{
+public class EatCommand extends Command implements ICommand {
     public EatCommand() {
         super();
     }

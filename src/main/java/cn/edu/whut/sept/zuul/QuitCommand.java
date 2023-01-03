@@ -3,7 +3,9 @@
  */
 package cn.edu.whut.sept.zuul;
 
-public class QuitCommand extends Command implements ICommand{
+import cn.edu.whut.sept.zuul.command.ICommand;
+
+public class QuitCommand extends Command implements ICommand {
     public QuitCommand() {
         super();
     }
