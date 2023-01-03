@@ -40,10 +40,10 @@ class Game{
 	+goRoom(command)
 	+quit(command)
 }
-Parser <-- CommandWords
-Game *-- Parser
-Game *-- Room
-Game <.. Command
-Room <-- Room
+Parser ..> CommandWords
+Game ..> Parser
+Game ..> Room
+Game ..> Command
+Parser ..> Command
 ```
 
