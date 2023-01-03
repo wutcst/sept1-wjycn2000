@@ -100,7 +100,7 @@ public class Room
      * 移除房间的物品
      * @param item 物品
      */
-    public void remove(Item item){
+    public void removeItem(Item item){
         itemList.remove(item);
     }
 }

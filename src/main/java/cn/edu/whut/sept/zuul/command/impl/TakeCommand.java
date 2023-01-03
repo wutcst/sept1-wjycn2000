@@ -36,7 +36,7 @@ public class TakeCommand extends Command implements ICommand {
                     System.out.println("Cannot carry more..");
                 }else{//未超重
                     game.getPlayer().getItem(item);
-                    roomItemList.remove(item);
+                    game.getCurrentRoom().removeItem(item);
                     System.out.println("You take the " + item.getName());
                 }
                 return false;
