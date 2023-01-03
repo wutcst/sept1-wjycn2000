@@ -1,5 +1,5 @@
 /**
- * 该类保存了游戏允许的命令
+ * 该类保存了游戏的有效命令
  * 最初始的命令为go,quit,help
  */
 package cn.edu.whut.sept.zuul;
