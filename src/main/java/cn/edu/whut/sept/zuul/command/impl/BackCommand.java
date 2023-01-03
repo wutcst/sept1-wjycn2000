@@ -1,8 +1,10 @@
 /**
  * 返回命令
  */
-package cn.edu.whut.sept.zuul;
+package cn.edu.whut.sept.zuul.command.impl;
 
+import cn.edu.whut.sept.zuul.Game;
+import cn.edu.whut.sept.zuul.command.Command;
 import cn.edu.whut.sept.zuul.command.ICommand;
 
 public class BackCommand extends Command implements ICommand {

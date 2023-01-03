@@ -1,8 +1,11 @@
 /**
  * items 命令
  */
-package cn.edu.whut.sept.zuul;
+package cn.edu.whut.sept.zuul.command.impl;
 
+import cn.edu.whut.sept.zuul.Game;
+import cn.edu.whut.sept.zuul.Item;
+import cn.edu.whut.sept.zuul.command.Command;
 import cn.edu.whut.sept.zuul.command.ICommand;
 
 import java.util.List;

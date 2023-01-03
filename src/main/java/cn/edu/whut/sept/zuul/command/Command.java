@@ -3,7 +3,7 @@
  * 游戏中用户的输入会被解析成命令，系统根据命令判断要做什么
  */
 
-package cn.edu.whut.sept.zuul;
+package cn.edu.whut.sept.zuul.command;
 
 public class Command
 {

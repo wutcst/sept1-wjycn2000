@@ -14,6 +14,7 @@
 package cn.edu.whut.sept.zuul;
 
 
+import cn.edu.whut.sept.zuul.command.Command;
 import cn.edu.whut.sept.zuul.command.ICommand;
 
 import java.util.LinkedList;
@@ -275,7 +276,7 @@ public class Game
         }
 
         String commandWord = command.getCommandWord();
-        String pacageName = "cn.edu.whut.sept.zuul.";
+        String pacageName = "cn.edu.whut.sept.zuul.command.impl.";
         StringBuilder bld = new StringBuilder();
         bld.append(pacageName);
         bld.append(upperCaseFirst(commandWord));

@@ -1,8 +1,10 @@
 /**
  * Quit命令，退出游戏
  */
-package cn.edu.whut.sept.zuul;
+package cn.edu.whut.sept.zuul.command.impl;
 
+import cn.edu.whut.sept.zuul.Game;
+import cn.edu.whut.sept.zuul.command.Command;
 import cn.edu.whut.sept.zuul.command.ICommand;
 
 public class QuitCommand extends Command implements ICommand {
