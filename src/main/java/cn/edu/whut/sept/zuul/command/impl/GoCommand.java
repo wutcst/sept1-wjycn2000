@@ -78,6 +78,7 @@ public class GoCommand extends Command implements ICommand {
             }
 
             game.setCurrentRoom(nextRoom);
+            game.getPlayer().setCurrentRoom(nextRoom);
             System.out.println(game.getCurrentRoom().getLongDescription());
         }
         return false;
