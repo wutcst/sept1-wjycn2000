@@ -24,8 +24,8 @@ public class Room
 
     /**
      * 设置房间的出口
-     * @param direction
-     * @param neighbor
+     * @param direction 门的方位
+     * @param neighbor 门通向的房间
      */
     public void setExit(String direction, Room neighbor)
     {
@@ -66,7 +66,7 @@ public class Room
 
     /**
      * 返回房间某个方向上的出口
-     * @param direction
+     * @param direction 指定方向
      * @return 此方向上的出口，如果存在返回连通房间，否则返回null
      */
     public Room getExit(String direction)

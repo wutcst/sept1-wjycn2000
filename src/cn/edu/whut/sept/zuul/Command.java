@@ -12,8 +12,8 @@ public class Command
 
     /**
      * 根据输入的第一个单词和第二个单词生成命令
-     * @param firstWord
-     * @param secondWord
+     * @param firstWord 解析出的第一个单词
+     * @param secondWord 解析出的第二个单词
      */
     public Command(String firstWord, String secondWord)
     {
