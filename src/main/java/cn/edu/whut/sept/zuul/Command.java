@@ -21,6 +21,15 @@ public class Command
         this.secondWord = secondWord;
     }
 
+    public Command(){
+
+    }
+
+    public void setCommand(Command c){
+        this.commandWord = c.getCommandWord();
+        this.secondWord = c.getSecondWord();
+    }
+
     /**
      * 返回命令的第一个单词
      * @return 返回命令单词
