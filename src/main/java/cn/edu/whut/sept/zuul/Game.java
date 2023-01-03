@@ -86,8 +86,8 @@ public class Game
         addPortal(new Portal(theater,lab));
 
         // add items
-        outside.addItem(new Item("shovel",3));
-        outside.addItem(new Item("lantern",2));
+        outside.addItem(new Item("shovel","A tool for digging",3));
+        outside.addItem(new Item("lantern","It provides a vague light",2));
 
         // initialise room exits
         outside.setExit("east", theater);
