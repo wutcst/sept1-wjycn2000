@@ -109,6 +109,10 @@ public class Player {
         weight -= item.getWeight();
     }
 
+    /**
+     * 按照物品名移除物品
+     * @param name 物品名称
+     */
     public void loseItem(String name){
         for (Item item : itemList){
             if(item.getName().equals(name))
@@ -117,6 +121,11 @@ public class Player {
         }
     }
 
+    /**
+     * 查询玩家是否持有某个名字的物品
+     * @param name 物品名
+     * @return 如果玩家有这个物品返回真；否则返回假
+     */
     public boolean hasItem(String name){
         for (Item item : itemList){
             if(item.getName().equals(name))

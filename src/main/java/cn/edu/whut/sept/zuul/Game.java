@@ -38,54 +38,105 @@ public class Game
 
     }
 
+    /**
+     * 获取当前房间
+     * @return 当前房间
+     */
     public Room getCurrentRoom() {
         return currentRoom;
     }
 
+    /**
+     * 获取上一次进入的房间
+     * @return 上一次进入的房间
+     */
     public Room getLastRoom() {
         return lastRoom;
     }
 
+    /**
+     * 获取解析器
+     * @return
+     */
     public Parser getParser() {
         return parser;
     }
 
+    /**
+     * 设置上一次进入的房间
+     * @param lastRoom 上一次进入的房间
+     */
     public void setLastRoom(Room lastRoom) {
         this.lastRoom = lastRoom;
     }
 
+    /**
+     * 设置当前房间
+     * @param currentRoom 当前房间
+     */
     public void setCurrentRoom(Room currentRoom) {
         this.currentRoom = currentRoom;
     }
 
+    /**
+     * 获取传送门
+     * @return 传送门列表
+     */
     public List<Portal> getPortals() {
         return portals;
     }
 
+    /**
+     * 添加传送门
+     * @param portal 新的传送门
+     */
     public void addPortal(Portal portal){
         portals.add(portal);
     }
 
+    /**
+     * 设置玩家
+     * @param player 玩家
+     */
     public void setPlayer(Player player){
         this.player = player;
     }
 
+    /**
+     * 获取游玩该游戏的玩家
+     * @return 玩家
+     */
     public Player getPlayer() {
         return player;
     }
 
+    /**
+     * 获取进门限制
+     * @return 所有限制
+     */
     public List<Constraint> getConstraints() {
         return constraints;
     }
 
+    /**
+     * 添加限制
+     * @param constraint 限制
+     */
     public void addConstraint(Constraint constraint){
         constraints.add(constraint);
     }
 
+    /**
+     * 移除限制
+     * @param constraint
+     */
     public void removeConstraint(Constraint constraint){
         constraints.remove(constraint);
     }
 
+    /**
+     * 根据当前房间移除限制
+     */
     public void removeConstraint(){
         for(Constraint constraint : getConstraints()){
             if(constraint.getFrom().equals(currentRoom)){
@@ -241,6 +292,11 @@ public class Game
         return wantToQuit;
     }
 
+    /**
+     * 将一个字符串首字母大写
+     * @param val
+     * @return 首字母大写的字符串
+     */
     public static String upperCaseFirst(String val) {
         char[] arr = val.toCharArray();
         arr[0] = Character.toUpperCase(arr[0]);

@@ -1,3 +1,6 @@
+/**
+ * take命令
+ */
 package cn.edu.whut.sept.zuul;
 
 import java.util.List;
@@ -7,6 +10,11 @@ public class TakeCommand extends Command implements ICommand{
         super();
     }
 
+    /**
+     * 允许玩家拿取物品
+     * @param game
+     * @return
+     */
     @Override
     public boolean excute(Game game) {
         if(getSecondWord()==null){

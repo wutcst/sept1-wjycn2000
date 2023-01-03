@@ -1,3 +1,6 @@
+/**
+ * 返回命令
+ */
 package cn.edu.whut.sept.zuul;
 
 public class BackCommand extends Command implements ICommand{
@@ -5,6 +8,11 @@ public class BackCommand extends Command implements ICommand{
         super();
     }
 
+    /**
+     * 执行该命令返回上次进入的房间，只能返回一次
+     * @param game
+     * @return 假
+     */
     @Override
     public boolean excute(Game game) {
         if(game.getLastRoom()!=null){

@@ -21,10 +21,17 @@ public class Command
         this.secondWord = secondWord;
     }
 
+    /**
+     * 空构造函数
+     */
     public Command(){
 
     }
 
+    /**
+     * 从一个命令复制命令
+     * @param c
+     */
     public void setCommand(Command c){
         this.commandWord = c.getCommandWord();
         this.secondWord = c.getSecondWord();

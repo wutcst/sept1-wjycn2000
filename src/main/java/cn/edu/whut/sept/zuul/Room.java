@@ -80,13 +80,26 @@ public class Room
     }
 
 
+    /**
+     * 获得房间的物品列表
+     * @return 物品列表
+     */
     public List<Item> getItemList(){
         return itemList;
     }
+
+    /**
+     * 添加物品到房间
+     * @param item 物品
+     */
     public void addItem(Item item){
         itemList.add(item);
     }
 
+    /**
+     * 移除房间的物品
+     * @param item 物品
+     */
     public void remove(Item item){
         itemList.remove(item);
     }

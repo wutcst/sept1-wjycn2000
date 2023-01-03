@@ -1,3 +1,6 @@
+/**
+ * 前往命令
+ */
 package cn.edu.whut.sept.zuul;
 
 import java.util.List;
@@ -10,6 +13,11 @@ public class GoCommand extends Command implements ICommand{
         super();
     }
 
+    /**
+     * 如果没有输入第二个单词则询问玩家去哪里；否则走该方向的门。如果没有门或者不允许进入系统给予提示。
+     * @param game
+     * @return 假
+     */
     @Override
     public boolean excute(Game game) {
         if(!hasSecondWord()) {

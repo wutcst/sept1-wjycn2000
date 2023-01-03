@@ -1,3 +1,6 @@
+/**
+ * Eat命令
+ */
 package cn.edu.whut.sept.zuul;
 
 import java.util.List;
@@ -7,6 +10,11 @@ public class EatCommand extends Command implements ICommand{
         super();
     }
 
+    /**
+     * 执行该命令吃掉物品
+     * @param game
+     * @return 假
+     */
     @Override
     public boolean excute(Game game) {
         if(getSecondWord()==null){

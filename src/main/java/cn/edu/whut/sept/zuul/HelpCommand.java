@@ -1,3 +1,6 @@
+/**
+ * 帮助命令
+ */
 package cn.edu.whut.sept.zuul;
 
 public class HelpCommand extends Command implements ICommand{
@@ -8,10 +11,15 @@ public class HelpCommand extends Command implements ICommand{
         super();
     }
 
+    /**
+     * 执行此命令输出帮助信息，和所有有效命令
+     * @param game
+     * @return 假
+     */
     @Override
     public boolean excute(Game game) {
-        System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at the university.");
+        System.out.println("You are a explorer.");
+        System.out.println("You are exploring a mysterious cave.");
         System.out.println();
         System.out.println("Your command words are:");
         game.getParser().showCommands();

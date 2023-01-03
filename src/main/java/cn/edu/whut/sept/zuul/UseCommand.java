@@ -1,3 +1,6 @@
+/**
+ * Use命令
+ */
 package cn.edu.whut.sept.zuul;
 
 import java.util.List;
@@ -7,6 +10,11 @@ public class UseCommand extends Command implements ICommand{
         super();
     }
 
+    /**
+     * 使用物品，触发效果
+     * @param game
+     * @return 假
+     */
     @Override
     public boolean excute(Game game) {
         if(getSecondWord()==null){
