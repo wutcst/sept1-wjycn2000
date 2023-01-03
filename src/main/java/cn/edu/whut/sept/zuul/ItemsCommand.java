@@ -18,6 +18,7 @@ public class ItemsCommand extends Command implements ICommand{
             for(Item item: itemList){
                 System.out.println(item.getName() + "\t-" + item.getDescription() + "\t" + item.getWeight() + "kg");
             }
+            System.out.println("You are carrying " + game.getPlayer().getWeight() +"kg");
         }
         return false;
     }

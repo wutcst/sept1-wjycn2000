@@ -97,6 +97,7 @@ public class Game
         // add items
         outside.addItem(new Item("shovel","A tool for digging",10));
         outside.addItem(new Item("lantern","It provides a vague light",2));
+        outside.addItem(new Item("cookie", "It seems to have magic power",0.1f));
 
         // initialise room exits
         outside.setExit("east", theater);
