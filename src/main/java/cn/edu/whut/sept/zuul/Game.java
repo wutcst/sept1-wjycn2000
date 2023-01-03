@@ -77,43 +77,73 @@ public class Game
      */
     private void createRooms()
     {
-        Room outside;
-        Room theater;
-        Room pub;
-        Room lab;
-        Room office;
+        Room start;
+        Room roadside;
+        Room lockRoom;
+        Room bambooForest;
+        Room lake;
+        Room mushroomField1;
+        Room cave1;
+        Room treasureRoom;
+        Room cave2;
+        Room mushroomField2;
+        Room cave3;
+        Room hole;
 
         // create the rooms
-        outside = new Room("outside the main entrance of the university");
-        theater = new Room("in a lecture theater");
-        pub = new Room("in the campus pub");
-        lab = new Room("in a computing lab");
-        office = new Room("in the computing admin office");
+        start = new Room("at the start point.");
+        roadside = new Room("on a narrow road. You see a lantern hanging by the road.");
+        lockRoom = new Room("in a room that has a magic lock. There are 3 holes on it");
+        bambooForest = new Room("in a bamboo forest. There is a lake in the east. There is something shinny" +
+                " under the lake.");
+        lake = new Room("in the middle of lake. You find some crystals under the lake");
+        mushroomField1 = new Room("in the middle of a mushroom field. You spot a strange red mushroom");
+        cave1 = new Room("in a cave. There is a mole lying on the ground. He is asking for something to eat");
+        treasureRoom = new Room("in a treasure room. There are boxes filled with countless coins.");
+        cave2 = new Room("in a creepy cave. There is a skeleton lying in the corner. A sword is held tightly in his " +
+                "hand");
+        mushroomField2 = new Room("in the middle of a mushroom field. You spot a strange red mushroom");
+        cave3 = new Room("in a dark cave. The lantern in your hand gives a little light. You see a piece of crystal " +
+                "shinning in the darkness");
+        hole = new Room("in a hole. The hole leads you to an unknown place.");
 
 
         //add portals
-        addPortal(new Portal(theater,lab));
+        addPortal(new Portal(hole,bambooForest));
 
         // add items
-        outside.addItem(new Item("shovel","A tool for digging",10));
-        outside.addItem(new Item("lantern","It provides a vague light",2));
-        outside.addItem(new Item("cookie", "It seems to have magic power",0.1f));
+        roadside.addItem(new Item("lantern","It provides a vague light",6));
+        lake.addItem(new Item("crystal","A shinny red stone", 1));
+        mushroomField1.addItem((new Item("mushroom","A strange red mushroom", 1)));
+        cave2.addItem(new Item("sword","It has sharp blade",2));
+        mushroomField2.addItem(new Item("mushroom","A strange red mushroom",1));
+        cave3.addItem(new Item("crystal","A shinny green stone", 1));
+
 
         // initialise room exits
-        outside.setExit("east", theater);
-        outside.setExit("south", lab);
-        outside.setExit("west", pub);
+        start.setExit("north", roadside);
+        roadside.setExit("south", start);
+        roadside.setExit("north", lockRoom);
+        lockRoom.setExit("south",roadside);
+        lockRoom.setExit("west",bambooForest);
+        lockRoom.setExit("east",cave2);
+        lockRoom.setExit("north",treasureRoom);
+        bambooForest.setExit("west", lake);
+        bambooForest.setExit("east", lockRoom);
+        bambooForest.setExit("north", mushroomField1);
+        lake.setExit("east",bambooForest);
+        mushroomField1.setExit("south", bambooForest);
+        mushroomField1.setExit("north",cave1);
+        cave1.setExit("south",mushroomField1);
+        treasureRoom.setExit("south",lockRoom);
+        cave2.setExit("west",lockRoom);
+        cave2.setExit("north",mushroomField2);
+        mushroomField2.setExit("south",cave2);
+        mushroomField2.setExit("east",cave3);
+        cave3.setExit("west",mushroomField2);
+        cave3.setExit("north",hole);
 
-        theater.setExit("west", outside);
-
-        pub.setExit("east", outside);
-
-        lab.setExit("north", outside);
-        lab.setExit("east", office);
-
-        office.setExit("west", lab);
-
-        currentRoom = outside;  // start game outside
+        currentRoom = start;  // start game outside
         lastRoom = null;
     }
 

@@ -108,4 +108,20 @@ public class Player {
         itemList.remove(item);
         weight -= item.getWeight();
     }
+
+    public void loseItem(String name){
+        for (Item item : itemList){
+            if(item.getName().equals(name))
+                loseItem(item);
+            break;
+        }
+    }
+
+    public boolean hasItem(String name){
+        for (Item item : itemList){
+            if(item.getName().equals(name))
+                return true;
+        }
+        return false;
+    }
 }

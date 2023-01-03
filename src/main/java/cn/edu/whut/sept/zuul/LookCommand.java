@@ -13,6 +13,7 @@ public class LookCommand extends Command implements ICommand{
         List<Item> itemList = currentRoom.getItemList();
         if(itemList.isEmpty()){
             System.out.println("You found nothing..");
+            return false;
         }
         System.out.println("After a careful search, you found: ");
         for(Item item : itemList){

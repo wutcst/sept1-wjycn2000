@@ -14,18 +14,18 @@ public class EatCommand extends Command implements ICommand{
             return false;
         }
 
-        if(getSecondWord().equals("cookie")){
+        if(getSecondWord().equals("mushroom")){
             List<Item> itemList = game.getPlayer().getItemList();
             for(Item item : itemList){
-                if(item.getName().equals("cookie")){
+                if(item.getName().equals("mushroom")){
                     game.getPlayer().setMaxWeight(game.getPlayer().getMaxWeight()+5.0f);
                     game.getPlayer().loseItem(item);
-                    System.out.println("You eat the cookie..");
+                    System.out.println("You eat the mushroom..");
                     System.out.println("You can carry " + game.getPlayer().getMaxWeight()+"kg now!");
                     return false;
                 }
             }
-            System.out.println("You do not have a cookie..");
+            System.out.println("You do not have a mushroom..");
         }
         return false;
     }
