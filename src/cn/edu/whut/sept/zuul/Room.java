@@ -56,12 +56,13 @@ public class Room
      */
     private String getExitString()
     {
-        String returnString = "Exits:";
+        StringBuilder bld = new StringBuilder();
+        bld.append("Exits:")
         Set<String> keys = exits.keySet();
         for(String exit : keys) {
-            returnString += " " + exit;
+            bld.append(" " + exit);
         }
-        return returnString;
+        return bld.toString();
     }
 
     /**

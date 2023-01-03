@@ -35,13 +35,19 @@ public class Parser
 
         inputLine = reader.nextLine();
 
-        Scanner tokenizer = new Scanner(inputLine);
-        if(tokenizer.hasNext()) {
-            word1 = tokenizer.next();   
+        try(Scanner tokenizer = new Scanner(inputLine)){
             if(tokenizer.hasNext()) {
-                word2 = tokenizer.next();
+                word1 = tokenizer.next();
+                if(tokenizer.hasNext()) {
+                    word2 = tokenizer.next();
+                }
             }
+        }catch (Exception e){
+            e.printStacktrace();
+        } finally {
+            tokenizer.close();
         }
+
 
         if(commands.isCommand(word1)) {
             return new Command(word1, word2);

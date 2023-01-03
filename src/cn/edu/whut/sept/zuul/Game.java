@@ -32,7 +32,11 @@ public class Game
      */
     private void createRooms()
     {
-        Room outside, theater, pub, lab, office;
+        Room outside;
+        Room theater;
+        Room pub;
+        Room lab;
+        Room office;
 
         // create the rooms
         outside = new Room("outside the main entrance of the university");
