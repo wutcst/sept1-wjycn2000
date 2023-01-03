@@ -14,19 +14,26 @@
 package cn.edu.whut.sept.zuul;
 
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 public class Game
 {
     private Parser parser;
     private Room currentRoom;
     private Room lastRoom;
+    private List<Portal> portals;
 
     /**
      * 创建游戏并初始化内部数据和解析器.
      */
     public Game()
     {
+        portals = new LinkedList<>();
         createRooms();
         parser = new Parser();
+
     }
 
     public Room getCurrentRoom() {
@@ -49,6 +56,14 @@ public class Game
         this.currentRoom = currentRoom;
     }
 
+    public List<Portal> getPortals() {
+        return portals;
+    }
+
+    public void addPortal(Portal portal){
+        portals.add(portal);
+    }
+
     /**
      * 创建所有房间对象并连接其出口用以构建迷宫.
      */
@@ -66,6 +81,10 @@ public class Game
         pub = new Room("in the campus pub");
         lab = new Room("in a computing lab");
         office = new Room("in the computing admin office");
+
+
+        //add portals
+        addPortal(new Portal(theater,lab));
 
         // add items
         outside.addItem(new Item("shovel",3));

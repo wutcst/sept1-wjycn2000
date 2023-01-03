@@ -22,14 +22,29 @@ public class GoCommand extends Command implements ICommand{
         Room currentRoom = game.getCurrentRoom();
         Room nextRoom = currentRoom.getExit(direction);
 
+
+
         if (nextRoom == null) {
             System.out.println("There is no door!");
         }
         else {
             game.setLastRoom(currentRoom);
+
+
+            for(Portal portal : game.getPortals()){
+                if(portal.getTriggerRoom().equals(nextRoom)){
+                    System.out.println("You entered a portal room.");
+                    System.out.println("You are teleported..");
+                    nextRoom = portal.getTargetRoom();
+                    game.setLastRoom(null);
+                    break;
+                }
+            }
+
             game.setCurrentRoom(nextRoom);
             System.out.println(game.getCurrentRoom().getLongDescription());
         }
         return false;
     }
+
 }
