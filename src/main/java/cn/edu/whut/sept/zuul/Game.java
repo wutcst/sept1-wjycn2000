@@ -18,6 +18,7 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
+    private Room lastRoom;
 
     /**
      * 创建游戏并初始化内部数据和解析器.
@@ -32,8 +33,20 @@ public class Game
         return currentRoom;
     }
 
+    public Room getLastRoom() {
+        return lastRoom;
+    }
+
     public Parser getParser() {
         return parser;
+    }
+
+    public void setLastRoom(Room lastRoom) {
+        this.lastRoom = lastRoom;
+    }
+
+    public void setCurrentRoom(Room currentRoom) {
+        this.currentRoom = currentRoom;
     }
 
     /**
@@ -54,6 +67,10 @@ public class Game
         lab = new Room("in a computing lab");
         office = new Room("in the computing admin office");
 
+        // add items
+        outside.addItem(new Item("shovel",3));
+        outside.addItem(new Item("lantern",2));
+
         // initialise room exits
         outside.setExit("east", theater);
         outside.setExit("south", lab);
@@ -69,6 +86,7 @@ public class Game
         office.setExit("west", lab);
 
         currentRoom = outside;  // start game outside
+        lastRoom = null;
     }
 
     /**

@@ -4,6 +4,8 @@
  */
 package cn.edu.whut.sept.zuul;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 import java.util.HashMap;
 
@@ -11,6 +13,7 @@ public class Room
 {
     private String description;
     private HashMap<String, Room> exits;
+    private List<Item> itemList;
 
     /**
      * 创建房间，初始化出口
@@ -20,6 +23,7 @@ public class Room
     {
         this.description = description;
         exits = new HashMap<>();
+        itemList = new LinkedList<>();
     }
 
     /**
@@ -73,6 +77,18 @@ public class Room
     public Room getExit(String direction)
     {
         return exits.get(direction);
+    }
+
+
+    public List<Item> getItemList(){
+        return itemList;
+    }
+    public void addItem(Item item){
+        itemList.add(item);
+    }
+
+    public void remove(Item item){
+        itemList.remove(item);
     }
 }
 

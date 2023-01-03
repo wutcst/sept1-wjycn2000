@@ -26,8 +26,9 @@ public class GoCommand extends Command implements ICommand{
             System.out.println("There is no door!");
         }
         else {
-            currentRoom = nextRoom;
-            System.out.println(currentRoom.getLongDescription());
+            game.setLastRoom(currentRoom);
+            game.setCurrentRoom(nextRoom);
+            System.out.println(game.getCurrentRoom().getLongDescription());
         }
         return false;
     }
