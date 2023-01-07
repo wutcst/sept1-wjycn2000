@@ -61,4 +61,15 @@ public class Parser
     {
         commands.showAll();
     }
+
+    /**
+     * 将一个字符串首字母大写
+     * @param val
+     * @return 首字母大写的字符串
+     */
+    public static String upperCaseFirst(String val) {
+        char[] arr = val.toCharArray();
+        arr[0] = Character.toUpperCase(arr[0]);
+        return new String(arr);
+    }
 }

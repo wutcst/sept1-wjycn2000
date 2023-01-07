@@ -279,7 +279,7 @@ public class Game
         String pacageName = "cn.edu.whut.sept.zuul.command.impl.";
         StringBuilder bld = new StringBuilder();
         bld.append(pacageName);
-        bld.append(upperCaseFirst(commandWord));
+        bld.append(Parser.upperCaseFirst(commandWord));
         bld.append("Command");
 
 
@@ -295,14 +295,4 @@ public class Game
         return wantToQuit;
     }
 
-    /**
-     * 将一个字符串首字母大写
-     * @param val
-     * @return 首字母大写的字符串
-     */
-    public static String upperCaseFirst(String val) {
-        char[] arr = val.toCharArray();
-        arr[0] = Character.toUpperCase(arr[0]);
-        return new String(arr);
-    }
 }
