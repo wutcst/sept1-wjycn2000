@@ -29,7 +29,8 @@ public class Item {
      * @param aWeight 物品描述
      * @param aDescription 物品重量
      */
-    public Item(final String aName, final String aDescription, final float aWeight) {
+    public Item(final String aName, final String aDescription,
+        final float aWeight) {
         this.name = aName;
         this.description = aDescription;
         this.weight = aWeight;
