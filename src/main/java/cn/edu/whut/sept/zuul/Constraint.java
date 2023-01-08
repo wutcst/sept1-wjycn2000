@@ -8,7 +8,7 @@ public class Constraint {
     private final Room to;
 
     /**
-     * 创建限制
+     * 创建限制.
      * @param from 从这个房间
      * @param to 到另一个房间
      */
@@ -18,7 +18,7 @@ public class Constraint {
     }
 
     /**
-     * 获取从房间
+     * 获取从房间.
      * @return 从房间
      */
     public Room getFrom() {
@@ -26,7 +26,7 @@ public class Constraint {
     }
 
     /**
-     * 获取到房间
+     * 获取到房间.
      * @return 到房间
      */
     public Room getTo() {

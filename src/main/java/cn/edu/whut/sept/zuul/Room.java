@@ -103,5 +103,3 @@ public class Room
         itemList.remove(item);
     }
 }
-
-

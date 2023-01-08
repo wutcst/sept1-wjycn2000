@@ -16,7 +16,6 @@ package cn.edu.whut.sept.zuul;
 
 import cn.edu.whut.sept.zuul.command.Command;
 import cn.edu.whut.sept.zuul.command.ICommand;
-
 import java.util.LinkedList;
 import java.util.List;
 
@@ -292,5 +291,4 @@ public class Game
 
         return wantToQuit;
     }
-
 }

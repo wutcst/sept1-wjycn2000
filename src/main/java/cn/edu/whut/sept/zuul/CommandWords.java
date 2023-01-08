@@ -4,40 +4,40 @@
  */
 package cn.edu.whut.sept.zuul;
 
-public class CommandWords
-{
-    private static final String[] validCommands = {
-            "go", "quit", "help", "look", "back", "take", "drop", "items", "eat", "use"
+public class CommandWords {
+    private static final String[] VALID_COMMANDS = {
+        "go", "quit", "help", "look", "back",
+        "take", "drop", "items", "eat", "use"
     };
 
     /**
-     * 目前没有初始化任务
+     * initialize.
      */
-    public CommandWords()
-    {
+    public CommandWords() {
         // nothing to do at the moment...
     }
 
     /**
-     * 判断一个字符串是否是有效命令
+     * 判断一个字符串是否是有效命令.
      * @param aString 输入字符串
      * @return 如果是有效命令返回真；否则返回假
      */
-    public boolean isCommand(String aString)
-    {
-        for (String validCommand : validCommands) {
+    public boolean isCommand(String aString) {
+        for (String validCommand : VALID_COMMANDS) {
             if (validCommand.equals(aString))
+            {
                 return true;
+            }
+
         }
         return false;
     }
 
     /**
-     * 显示所有有效命令
+     * 显示所有有效命令.
      */
-    public void showAll()
-    {
-        for(String command: validCommands) {
+    public void showAll() {
+        for(String command: VALID_COMMANDS) {
             System.out.print(command + "  ");
         }
         System.out.println();

@@ -32,7 +32,7 @@ class Parser {
 	+getCommand() Command
 }
 class CommandWords{
-	-String validCommands
+	-String VALID_COMMANDS
 	+isCommand(aString) boolean
 	+showAll()
 }
@@ -89,7 +89,7 @@ class Parser {
 	+getCommand() Command
 }
 class CommandWords{
-	-String validCommands
+	-String VALID_COMMANDS
 	+isCommand(aString) boolean
 	+showAll()
 }
