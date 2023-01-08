@@ -6,7 +6,7 @@ package cn.edu.whut.sept.zuul;
 public class Item {
 
     /**
-     * 灯笼重量
+     * 灯笼重量.
      */
     public static final float LANTERN_WEIGHT = 6.0f;
 
