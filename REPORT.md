@@ -27,42 +27,42 @@ CommandWords类：保存有效的命令
 ```mermaid
 classDiagram
 class Parser {
-	-CommandWords commands
-	-Scanner reader
-	+getCommand() Command
+-CommandWords commands
+-Scanner reader
++getCommand() Command
 }
 class CommandWords{
-	-String VALID_COMMANDS
-	+isCommand(aString) boolean
-	+showAll()
+-String VALID_COMMANDS
++isCommand(aString) boolean
++showAll()
 }
 class Command{
-	-String commandWord
-	-String secondWord
-	+getCommandWord() String
-	+getSecondWord() String
-	+isUnknown() boolean
-	+hasSecondWord() boolean
+-String commandWord
+-String secondWord
++getCommandWord() String
++getSecondWord() String
++isUnknown() boolean
++hasSecondWord() boolean
 }
 class Room{
-	-String description
-	-HashMap~String,Room~ exits
-	+setExit(direction, neighbour)
-	+getShortDescription() String
-	+getLongDescription() String
-	+getExitString() String
-	+getExit(direction) Room
+-String description
+-HashMap~String,Room~ exits
++setExit(direction, neighbour)
++getShortDescription() String
++getLongDescription() String
++getExitString() String
++getExit(direction) Room
 }
 class Game{
-	-Parser paser
-	-Room currentRoom
-	+createRooms()
-	+play()
-	+printWelcome()
-	+processCommand(command) boolean
-	+printHelp()
-	+goRoom(command)
-	+quit(command)
+-Parser paser
+-Room currentRoom
++createRooms()
++play()
++printWelcome()
++processCommand(command) boolean
++printHelp()
++goRoom(command)
++quit(command)
 }
 Parser ..> CommandWords
 Game ..> Parser
@@ -84,39 +84,39 @@ Parser ..> Command
 ```mermaid
 classDiagram
 class Parser {
-	-CommandWords commands
-	-Scanner reader
-	+getCommand() Command
+-CommandWords commands
+-Scanner reader
++getCommand() Command
 }
 class CommandWords{
-	-String VALID_COMMANDS
-	+isCommand(aString) boolean
-	+showAll()
+-String VALID_COMMANDS
++isCommand(aString) boolean
++showAll()
 }
 class Command{
-	-String commandWord
-	-String secondWord
-	+getCommandWord() String
-	+getSecondWord() String
-	+isUnknown() boolean
-	+hasSecondWord() boolean
+-String commandWord
+-String secondWord
++getCommandWord() String
++getSecondWord() String
++isUnknown() boolean
++hasSecondWord() boolean
 }
 class Room{
-	-String description
-	-HashMap~String,Room~ exits
-	+setExit(direction, neighbour)
-	+getShortDescription() String
-	+getLongDescription() String
-	+getExitString() String
-	+getExit(direction) Room
+-String description
+-HashMap~String,Room~ exits
++setExit(direction, neighbour)
++getShortDescription() String
++getLongDescription() String
++getExitString() String
++getExit(direction) Room
 }
 class Game{
-	-Parser paser
-	-Room currentRoom
-	+createRooms()
-	+play()
-	+printWelcome()
-	+processCommand(command) boolean
+-Parser paser
+-Room currentRoom
++createRooms()
++play()
++printWelcome()
++processCommand(command) boolean
 }
 
 class ICommand{
@@ -156,24 +156,24 @@ ICommand <|.. QuitCommand
 ```mermaid
 classDiagram
 class Item{
-    -String name
-    -String description
-    -float weight
+-String name
+-String description
+-float weight
 }
 class LookCommand{
-	+execute(game) boolean
++execute(game) boolean
 }
 class Room{
-	-String description
-	-HashMap~String,Room~ exits
-	-List~Item~ itemList
-	+setExit(direction, neighbour)
-	+getShortDescription() String
-	+getLongDescription() String
-	+getExitString() String
-	+getExit(direction) Room
-	+getItemList() List~Item~
-	+addItem(item)
+-String description
+-HashMap~String,Room~ exits
+-List~Item~ itemList
++setExit(direction, neighbour)
++getShortDescription() String
++getLongDescription() String
++getExitString() String
++getExit(direction) Room
++getItemList() List~Item~
++addItem(item)
 }
 ```
 
@@ -184,17 +184,17 @@ class Room{
 ```mermaid
 classDiagram
 class BackCommand{
-	+execute(game) boolean
++execute(game) boolean
 }
 
 class Game{
-	-Parser paser
-	-Room currentRoom
-	-Room lastRoom
-	+createRooms()
-	+play()
-	+printWelcome()
-	+processCommand(command) boolean
+-Parser paser
+-Room currentRoom
+-Room lastRoom
++createRooms()
++play()
++printWelcome()
++processCommand(command) boolean
 }
 ```
 
@@ -210,15 +210,15 @@ class Portal{
 }
 
 class Game{
-	-Parser paser
-	-Room currentRoom
-	-Room lastRoom
-	-List~Portal~ portals
-	+createRooms()
-	+play()
-	+printWelcome()
-	+processCommand(command) boolean
-	+addPortal(portal)
+-Parser paser
+-Room currentRoom
+-Room lastRoom
+-List~Portal~ portals
++createRooms()
++play()
++printWelcome()
++processCommand(command) boolean
++addPortal(portal)
 }
 ```
 
@@ -229,26 +229,26 @@ class Game{
 ```mermaid
 classDiagram
 class Player{
-	-String name
-	-Room currentRoom
-	-float maxWeight
-	-float weight
-	-List~Item~ itemList
-	+hasItem(name) boolean
-	+getItem(item)
-	+loseItem(item)
+-String name
+-Room currentRoom
+-float maxWeight
+-float weight
+-List~Item~ itemList
++hasItem(name) boolean
++getItem(item)
++loseItem(item)
 }
 class TakeCommand{
-	execute(game) boolean
+execute(game) boolean
 }
 class DropCommand{
-	execute(game) boolean
+execute(game) boolean
 }
 class ItemsCommand{
-	execute(game) boolean
+execute(game) boolean
 }
 class EatCommand{
-	execute(game) boolean
+execute(game) boolean
 }
 ```
 
@@ -266,7 +266,7 @@ class Constraint{
 }
 
 class UseCommand{
-	execute(game) boolean
+execute(game) boolean
 }
 ```
 
