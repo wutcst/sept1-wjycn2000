@@ -6,6 +6,11 @@ package cn.edu.whut.sept.zuul;
 public class Item {
 
     /**
+     * 灯笼重量
+     */
+    public static final float LANTERN_WEIGHT = 6.0f;
+
+    /**
      * 物品名.
      */
     private final String name;
@@ -20,14 +25,14 @@ public class Item {
 
     /**
      * 创建物品对象.
-     * @param name 物品名
-     * @param description 物品描述
-     * @param weight 物品重量
+     * @param aName 物品名
+     * @param aWeight 物品描述
+     * @param aDescription 物品重量
      */
-    public Item(String name, String description, float weight) {
-        this.name = name;
-        this.description = description;
-        this.weight = weight;
+    public Item(final String aName, final String aDescription, final float aWeight) {
+        this.name = aName;
+        this.description = aDescription;
+        this.weight = aWeight;
     }
 
 

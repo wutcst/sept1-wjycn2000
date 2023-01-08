@@ -231,7 +231,7 @@ public class Game {
     addConstraint(new Constraint(mushroomField2, cave3));
     // add items
     roadside.addItem(new Item("lantern",
-        "It provides a vague light", 7.0f));
+        "It provides a vague light", Item.LANTERN_WEIGHT));
     lake.addItem(new Item("crystal",
         "A shinny red stone", 1.0f));
     mushroomField1.addItem((new Item("mushroom",
