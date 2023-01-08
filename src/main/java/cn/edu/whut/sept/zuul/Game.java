@@ -1,5 +1,6 @@
 /**
- * 该类是“World-of-Zuul”应用程序的主类。 《World of Zuul》是一款简单的文本冒险游戏。用户可以在一些房间组成的迷宫中探险。 你们可以通过扩展该游戏的功能使它更有趣!.
+ * 该类是“World-of-Zuul”应用程序的主类。 《World of Zuul》是一款简单的文本冒险游戏。
+ * 用户可以在一些房间组成的迷宫中探险。 你们可以通过扩展该游戏的功能使它更有趣!.
  * <p>
  * 如果想开始执行这个游戏，用户需要创建Game类的一个实例并调用“play”方法。
  * <p>
@@ -23,23 +24,23 @@ public class Game {
    */
   private final Parser parser;
   /**
-   * 当前房间
+   * 当前房间.
    */
   private Room currentRoom;
   /**
-   * 上一个房间
+   * 上一个房间.
    */
   private Room lastRoom;
   /**
-   * 传送房间
+   * 传送房间.
    */
   private final List<Portal> portals;
   /**
-   * 玩家
+   * 玩家.
    */
   private Player player;
   /**
-   * 限制
+   * 限制.
    */
   private final List<Constraint> constraints;
 
@@ -154,8 +155,9 @@ public class Game {
 
   /**
    * 移除限制.
+   * @param constraint 限制
    */
-  public void removeConstraint(Constraint constraint) {
+  public void removeConstraint(final Constraint constraint) {
     constraints.remove(constraint);
   }
 
@@ -228,12 +230,18 @@ public class Game {
     addConstraint(new Constraint(lockRoom, treasureRoom));
     addConstraint(new Constraint(mushroomField2, cave3));
     // add items
-    roadside.addItem(new Item("lantern", "It provides a vague light", 6.0f));
-    lake.addItem(new Item("crystal", "A shinny red stone", 1.0f));
-    mushroomField1.addItem((new Item("mushroom", "A strange red mushroom", 1.0f)));
-    cave2.addItem(new Item("sword", "It has sharp blade", 2.0f));
-    mushroomField2.addItem(new Item("mushroom", "A strange red mushroom", 1.0f));
-    cave3.addItem(new Item("crystal", "A shinny green stone", 1.0f));
+    roadside.addItem(new Item("lantern",
+        "It provides a vague light", 7.0f));
+    lake.addItem(new Item("crystal",
+        "A shinny red stone", 1.0f));
+    mushroomField1.addItem((new Item("mushroom",
+        "A strange red mushroom", 1.0f)));
+    cave2.addItem(new Item("sword",
+        "It has sharp blade", 2.0f));
+    mushroomField2.addItem(new Item("mushroom",
+        "A strange red mushroom", 1.0f));
+    cave3.addItem(new Item("crystal",
+        "A shinny green stone", 1.0f));
 
     // initialise room exits
     start.setExit("north", roadside);
@@ -298,7 +306,7 @@ public class Game {
    * @param command 待处理的游戏指令，由解析器从用户输入内容生成.
    * @return 如果执行的是游戏结束指令，则返回true，否则返回false.
    */
-  private boolean processCommand(Command command) {
+  private boolean processCommand(final Command command) {
     boolean wantToQuit;
 
     if (command.isUnknown()) {
