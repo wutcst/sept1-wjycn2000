@@ -4,7 +4,15 @@
 package cn.edu.whut.sept.zuul;
 
 public class Constraint {
+
+    /**
+     * 从哪个房间.
+     */
     private final Room from;
+
+    /**
+     * 到哪个房间.
+     */
     private final Room to;
 
     /**
@@ -12,7 +20,7 @@ public class Constraint {
      * @param from 从这个房间
      * @param to 到另一个房间
      */
-    public Constraint(Room from, Room to) {
+    public Constraint(final Room from, final Room to) {
         this.from = from;
         this.to = to;
     }

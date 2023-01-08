@@ -5,6 +5,10 @@
 package cn.edu.whut.sept.zuul;
 
 public class CommandWords {
+
+    /**
+     * 有效命令.
+     */
     private static final String[] VALID_COMMANDS = {
         "go", "quit", "help", "look", "back",
         "take", "drop", "items", "eat", "use"
@@ -22,10 +26,9 @@ public class CommandWords {
      * @param aString 输入字符串
      * @return 如果是有效命令返回真；否则返回假
      */
-    public boolean isCommand(String aString) {
+    public boolean isCommand(final String aString) {
         for (String validCommand : VALID_COMMANDS) {
-            if (validCommand.equals(aString))
-            {
+            if (validCommand.equals(aString)) {
                 return true;
             }
 
@@ -37,7 +40,7 @@ public class CommandWords {
      * 显示所有有效命令.
      */
     public void showAll() {
-        for(String command: VALID_COMMANDS) {
+        for (String command: VALID_COMMANDS) {
             System.out.print(command + "  ");
         }
         System.out.println();
