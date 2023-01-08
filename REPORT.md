@@ -174,7 +174,6 @@ class Room{
 	+getExit(direction) Room
 	+getItemList() List~Item~
 	+addItem(item)
-	+re
 }
 ```
 
