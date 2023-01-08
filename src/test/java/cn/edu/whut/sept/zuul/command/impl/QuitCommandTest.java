@@ -12,11 +12,11 @@ import static org.junit.Assert.*;
 public class QuitCommandTest {
 
     @Test
-    public void excute() {
+    public void execute() {
         Game game = new Game();
         Command command = new Command("quit", null);
         QuitCommand quitCommand = new QuitCommand();
         quitCommand.setCommand(command);
-        assertTrue(quitCommand.excute(game));
+        assertTrue(quitCommand.execute(game));
     }
 }

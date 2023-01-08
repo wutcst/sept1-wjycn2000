@@ -77,7 +77,7 @@ Parser ..> Command
 
 原本该方法通过多个else if识别command，调用合适的处理方法，这样非常不易添加命令，破坏了封装性。
 
-将Game的处理命令的方法抽出来成为类，使用Java的反射机制，通过类名获取类GoCommand,HelpCommand,QuitCommand的实例，这些类统一实现ICommand接口，这样就可以通过excute()方法调用各自的实现。
+将Game的处理命令的方法抽出来成为类，使用Java的反射机制，通过类名获取类GoCommand,HelpCommand,QuitCommand的实例，这些类统一实现ICommand接口，这样就可以通过execute()方法调用各自的实现。
 
 改进后的类图：
 
@@ -121,19 +121,19 @@ class Game{
 
 class ICommand{
 <<interface>>
-excute(game) boolean
+execute(game) boolean
 }
 
 class GoCommand {
-+excute(game) boolean
++execute(game) boolean
 }
 
 class HelpCommand {
-+excute(game) boolean
++execute(game) boolean
 }
 
 class QuitCommand{
-+excute(game) boolean
++execute(game) boolean
 }
 
 Parser ..> CommandWords
@@ -161,7 +161,7 @@ class Item{
     -float weight
 }
 class LookCommand{
-	+excute(game) boolean
+	+execute(game) boolean
 }
 class Room{
 	-String description
@@ -185,7 +185,7 @@ class Room{
 ```mermaid
 classDiagram
 class BackCommand{
-	+excute(game) boolean
+	+execute(game) boolean
 }
 
 class Game{
@@ -240,16 +240,16 @@ class Player{
 	+loseItem(item)
 }
 class TakeCommand{
-	excute(game) boolean
+	execute(game) boolean
 }
 class DropCommand{
-	excute(game) boolean
+	execute(game) boolean
 }
 class ItemsCommand{
-	excute(game) boolean
+	execute(game) boolean
 }
 class EatCommand{
-	excute(game) boolean
+	execute(game) boolean
 }
 ```
 
@@ -267,7 +267,7 @@ class Constraint{
 }
 
 class UseCommand{
-	excute(game) boolean
+	execute(game) boolean
 }
 ```
 

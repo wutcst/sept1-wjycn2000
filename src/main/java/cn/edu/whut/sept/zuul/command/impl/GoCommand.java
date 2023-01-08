@@ -24,7 +24,7 @@ public class GoCommand extends Command implements ICommand {
      * @return 假
      */
     @Override
-    public boolean excute(Game game) {
+    public boolean execute(Game game) {
         if(!hasSecondWord()) {
             // if there is no second word, we don't know where to go...
             System.out.println("Go where?");

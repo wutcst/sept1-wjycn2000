@@ -10,12 +10,12 @@ import static org.junit.Assert.*;
 public class GoCommandTest {
 
     @Test
-    public void excute() {
+    public void execute() {
         Game game = new Game();
         Player player = new Player("testPlayer", game);
         Command command = new Command("go", "north");
         GoCommand goCommand = new GoCommand();
         goCommand.setCommand(command);
-        assertFalse(goCommand.excute(game));
+        assertFalse(goCommand.execute(game));
     }
 }

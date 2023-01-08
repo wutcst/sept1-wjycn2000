@@ -276,9 +276,9 @@ public class Game
         }
 
         String commandWord = command.getCommandWord();
-        String pacageName = "cn.edu.whut.sept.zuul.command.impl.";
+        String packageName = "cn.edu.whut.sept.zuul.command.impl.";
         StringBuilder bld = new StringBuilder();
-        bld.append(pacageName);
+        bld.append(packageName);
         bld.append(Parser.upperCaseFirst(commandWord));
         bld.append("Command");
 
@@ -287,7 +287,7 @@ public class Game
             Command c = (Command) Class.forName(bld.toString()).newInstance();
             c.setCommand(command);
             ICommand iCommand = (ICommand)c;
-            wantToQuit = iCommand.excute(this);
+            wantToQuit = iCommand.execute(this);
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
             throw new RuntimeException(e);
         }

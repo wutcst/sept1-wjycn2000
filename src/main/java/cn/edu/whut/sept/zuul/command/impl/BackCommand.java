@@ -18,7 +18,7 @@ public class BackCommand extends Command implements ICommand {
      * @return 假
      */
     @Override
-    public boolean excute(Game game) {
+    public boolean execute(Game game) {
         if(game.getLastRoom()!=null){
             game.setCurrentRoom(game.getLastRoom());
             game.setLastRoom(null);

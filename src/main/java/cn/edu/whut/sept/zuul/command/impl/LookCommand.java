@@ -22,7 +22,7 @@ public class LookCommand extends Command implements ICommand {
      * @return 假
      */
     @Override
-    public boolean excute(Game game) {
+    public boolean execute(Game game) {
         Room currentRoom = game.getCurrentRoom();
         List<Item> itemList = currentRoom.getItemList();
         if(itemList.isEmpty()){

@@ -18,7 +18,7 @@ public class QuitCommand extends Command implements ICommand {
      * @return
      */
     @Override
-    public boolean excute(Game game) {
+    public boolean execute(Game game) {
         if(hasSecondWord()) {
             System.out.println("Quit what?");
             return false;

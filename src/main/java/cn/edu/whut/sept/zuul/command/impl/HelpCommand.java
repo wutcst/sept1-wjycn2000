@@ -21,7 +21,7 @@ public class HelpCommand extends Command implements ICommand {
      * @return 假
      */
     @Override
-    public boolean excute(Game game) {
+    public boolean execute(Game game) {
         System.out.println("You are a explorer.");
         System.out.println("You are exploring a mysterious cave.");
         System.out.println();

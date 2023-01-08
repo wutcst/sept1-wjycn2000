@@ -21,7 +21,7 @@ public class TakeCommand extends Command implements ICommand {
      * @return
      */
     @Override
-    public boolean excute(Game game) {
+    public boolean execute(Game game) {
         if(getSecondWord()==null){
             System.out.println("Take what?");
             return false;

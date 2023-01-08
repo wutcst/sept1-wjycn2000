@@ -11,6 +11,6 @@ public interface ICommand {
      * @param game
      * @return
      */
-    boolean excute(Game game);
+    boolean execute(Game game);
 
 }

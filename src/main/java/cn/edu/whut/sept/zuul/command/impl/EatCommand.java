@@ -21,7 +21,7 @@ public class EatCommand extends Command implements ICommand {
      * @return 假
      */
     @Override
-    public boolean excute(Game game) {
+    public boolean execute(Game game) {
         if(getSecondWord()==null){
             System.out.println("eat what?");
             return false;

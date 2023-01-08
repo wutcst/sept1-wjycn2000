@@ -21,7 +21,7 @@ public class ItemsCommand extends Command implements ICommand {
      * @return 假
      */
     @Override
-    public boolean excute(Game game) {
+    public boolean execute(Game game) {
         List<Item> itemList = game.getPlayer().getItemList();
         if(itemList.isEmpty()){
             System.out.println("You have nothing on you..");
