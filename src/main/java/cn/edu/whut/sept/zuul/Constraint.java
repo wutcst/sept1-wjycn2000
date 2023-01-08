@@ -17,12 +17,12 @@ public class Constraint {
 
     /**
      * 创建限制.
-     * @param from 从这个房间
-     * @param to 到另一个房间
+     * @param fromRoom 从这个房间
+     * @param toRoom 到另一个房间
      */
-    public Constraint(final Room from, final Room to) {
-        this.from = from;
-        this.to = to;
+    public Constraint(final Room fromRoom, final Room toRoom) {
+        this.from = fromRoom;
+        this.to = toRoom;
     }
 
     /**
