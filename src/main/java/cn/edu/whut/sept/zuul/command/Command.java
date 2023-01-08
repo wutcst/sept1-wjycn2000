@@ -30,7 +30,6 @@ public class Command
 
     /**
      * 从一个命令复制命令
-     * @param c
      */
     public void setCommand(Command c){
         this.commandWord = c.getCommandWord();

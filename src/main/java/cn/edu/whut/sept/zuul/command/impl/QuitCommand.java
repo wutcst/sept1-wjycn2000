@@ -14,8 +14,6 @@ public class QuitCommand extends Command implements ICommand {
 
     /**
      * 如果输入了第二个单词，询问是否退出；否则返回退出信号
-     * @param game
-     * @return
      */
     @Override
     public boolean execute(Game game) {

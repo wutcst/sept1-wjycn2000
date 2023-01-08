@@ -12,7 +12,7 @@ public class GoCommandTest {
     @Test
     public void execute() {
         Game game = new Game();
-        Player player = new Player("testPlayer", game);
+        @SuppressWarnings("unused") Player player = new Player("testPlayer", game);
         Command command = new Command("go", "north");
         GoCommand goCommand = new GoCommand();
         goCommand.setCommand(command);

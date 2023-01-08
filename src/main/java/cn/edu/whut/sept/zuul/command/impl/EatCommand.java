@@ -11,15 +11,16 @@ import cn.edu.whut.sept.zuul.command.ICommand;
 import java.util.List;
 
 public class EatCommand extends Command implements ICommand {
+    @SuppressWarnings("unused")
     public EatCommand() {
         super();
     }
 
     /**
      * 执行该命令吃掉物品
-     * @param game
      * @return 假
      */
+    @SuppressWarnings("unused")
     @Override
     public boolean execute(Game game) {
         if(getSecondWord()==null){

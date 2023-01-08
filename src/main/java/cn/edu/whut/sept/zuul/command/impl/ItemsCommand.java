@@ -11,15 +11,16 @@ import cn.edu.whut.sept.zuul.command.ICommand;
 import java.util.List;
 
 public class ItemsCommand extends Command implements ICommand {
+    @SuppressWarnings("unused")
     public ItemsCommand() {
         super();
     }
 
     /**
      * 执行该命令查看玩家物品栏
-     * @param game
      * @return 假
      */
+    @SuppressWarnings("unused")
     @Override
     public boolean execute(Game game) {
         List<Item> itemList = game.getPlayer().getItemList();

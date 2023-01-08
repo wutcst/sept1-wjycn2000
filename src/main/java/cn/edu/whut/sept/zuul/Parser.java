@@ -11,8 +11,8 @@ import java.util.Scanner;
 
 public class Parser
 {
-    private CommandWords commands;
-    private Scanner reader;
+    private final CommandWords commands;
+    private final Scanner reader;
 
     /**
      * 初始化游戏的命令语句和输入端口
@@ -64,7 +64,6 @@ public class Parser
 
     /**
      * 将一个字符串首字母大写
-     * @param val
      * @return 首字母大写的字符串
      */
     public static String upperCaseFirst(String val) {

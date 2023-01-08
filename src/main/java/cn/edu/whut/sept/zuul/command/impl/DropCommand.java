@@ -11,15 +11,16 @@ import cn.edu.whut.sept.zuul.command.ICommand;
 import java.util.List;
 
 public class DropCommand extends Command implements ICommand {
+    @SuppressWarnings("unused")
     public DropCommand() {
         super();
     }
 
     /**
      * 执行该命令丢掉物品，如果没有说明丢掉什么则系统询问。玩家没有该物品系统给予提示。
-     * @param game
      * @return 假
      */
+    @SuppressWarnings("unused")
     @Override
     public boolean execute(Game game) {
         if(getSecondWord()==null){

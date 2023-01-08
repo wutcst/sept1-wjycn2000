@@ -2,10 +2,7 @@ package cn.edu.whut.sept.zuul.command.impl;
 
 import cn.edu.whut.sept.zuul.Game;
 import cn.edu.whut.sept.zuul.command.Command;
-import cn.edu.whut.sept.zuul.command.ICommand;
 import org.junit.Test;
-
-import java.util.concurrent.ConcurrentMap;
 
 import static org.junit.Assert.*;
 

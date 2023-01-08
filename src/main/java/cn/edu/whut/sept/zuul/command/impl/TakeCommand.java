@@ -11,15 +11,15 @@ import cn.edu.whut.sept.zuul.command.ICommand;
 import java.util.List;
 
 public class TakeCommand extends Command implements ICommand {
+    @SuppressWarnings("unused")
     public TakeCommand() {
         super();
     }
 
     /**
      * 允许玩家拿取物品
-     * @param game
-     * @return
      */
+    @SuppressWarnings("unused")
     @Override
     public boolean execute(Game game) {
         if(getSecondWord()==null){

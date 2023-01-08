@@ -8,15 +8,16 @@ import cn.edu.whut.sept.zuul.command.Command;
 import cn.edu.whut.sept.zuul.command.ICommand;
 
 public class BackCommand extends Command implements ICommand {
+    @SuppressWarnings("unused")
     public BackCommand() {
         super();
     }
 
     /**
      * 执行该命令返回上次进入的房间，只能返回一次
-     * @param game
      * @return 假
      */
+    @SuppressWarnings("unused")
     @Override
     public boolean execute(Game game) {
         if(game.getLastRoom()!=null){

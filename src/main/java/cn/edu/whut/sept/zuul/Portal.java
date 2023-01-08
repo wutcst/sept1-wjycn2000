@@ -4,8 +4,8 @@
 package cn.edu.whut.sept.zuul;
 
 public class Portal {
-    private Room triggerRoom;
-    private Room targetRoom;
+    private final Room triggerRoom;
+    private final Room targetRoom;
 
     /**
      * 传送门

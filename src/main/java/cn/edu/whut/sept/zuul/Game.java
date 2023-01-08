@@ -2,9 +2,9 @@
  * 该类是“World-of-Zuul”应用程序的主类。
  * 《World of Zuul》是一款简单的文本冒险游戏。用户可以在一些房间组成的迷宫中探险。
  * 你们可以通过扩展该游戏的功能使它更有趣!.
- *
+ * <p>
  * 如果想开始执行这个游戏，用户需要创建Game类的一个实例并调用“play”方法。
- *
+ * <p>
  * Game类的实例将创建并初始化所有其他类:它创建所有房间，并将它们连接成迷宫；它创建解析器
  * 接收用户输入，并将用户输入转换成命令后开始运行游戏。
  *
@@ -22,12 +22,12 @@ import java.util.List;
 
 public class Game
 {
-    private Parser parser;
+    private final Parser parser;
     private Room currentRoom;
     private Room lastRoom;
-    private List<Portal> portals;
+    private final List<Portal> portals;
     private Player player;
-    private List<Constraint> constraints;
+    private final List<Constraint> constraints;
 
     /**
      * 创建游戏并初始化内部数据和解析器.
@@ -59,7 +59,6 @@ public class Game
 
     /**
      * 获取解析器
-     * @return
      */
     public Parser getParser() {
         return parser;
@@ -131,7 +130,6 @@ public class Game
 
     /**
      * 移除限制
-     * @param constraint
      */
     public void removeConstraint(Constraint constraint){
         constraints.remove(constraint);
@@ -268,7 +266,7 @@ public class Game
      */
     private boolean processCommand(Command command)
     {
-        boolean wantToQuit = false;
+        boolean wantToQuit;
 
         if(command.isUnknown()) {
             System.out.println("I don't know what you mean...");

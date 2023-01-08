@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Player {
 
-    @SuppressWarnings("unused")
+    @SuppressWarnings({"unused", "FieldCanBeLocal"})
     private final String name;
     @SuppressWarnings("unused")
     private Room currentRoom;

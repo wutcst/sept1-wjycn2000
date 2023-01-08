@@ -11,13 +11,12 @@ import java.util.HashMap;
 
 public class Room
 {
-    private String description;
-    private HashMap<String, Room> exits;
-    private List<Item> itemList;
+    private final String description;
+    private final HashMap<String, Room> exits;
+    private final List<Item> itemList;
 
     /**
      * 创建房间，初始化出口
-     * @param description
      */
     public Room(String description)
     {
@@ -64,7 +63,7 @@ public class Room
         bld.append("Exits:");
         Set<String> keys = exits.keySet();
         for(String exit : keys) {
-            bld.append(" " + exit);
+            bld.append(" ").append(exit);
         }
         return bld.toString();
     }

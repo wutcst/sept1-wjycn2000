@@ -20,7 +20,6 @@ public class GoCommand extends Command implements ICommand {
 
     /**
      * 如果没有输入第二个单词则询问玩家去哪里；否则走该方向的门。如果没有门或者不允许进入系统给予提示。
-     * @param game
      * @return 假
      */
     @Override
@@ -48,14 +47,14 @@ public class GoCommand extends Command implements ICommand {
             if(!game.getConstraints().isEmpty()){
                 for(Constraint constraint : game.getConstraints()){
                     if(constraint.getFrom().equals(currentRoom) && constraint.getTo().equals(nextRoom)){
-                        if(nextRoom.getShortDescription().indexOf("coins")!=-1){
+                        if(nextRoom.getShortDescription().contains("coins")){
                             System.out.println("The door has not opened.");
                             return false;
                         }
-                        else if(nextRoom.getShortDescription().indexOf("lake")!=-1){
+                        else if(nextRoom.getShortDescription().contains("lake")){
                             System.out.println("need a boat..");
                             return false;
-                        }else if(nextRoom.getShortDescription().indexOf("dark")!=-1){
+                        }else if(nextRoom.getShortDescription().contains("dark")){
                             System.out.println("It's too dark. You need light.");
                             return false;
                         }

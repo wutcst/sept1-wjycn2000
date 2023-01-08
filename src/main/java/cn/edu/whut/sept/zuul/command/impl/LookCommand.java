@@ -12,15 +12,16 @@ import cn.edu.whut.sept.zuul.command.ICommand;
 import java.util.List;
 
 public class LookCommand extends Command implements ICommand {
+    @SuppressWarnings("unused")
     public LookCommand() {
         super();
     }
 
     /**
      * 执行该命令来查看房间内的物品信息
-     * @param game
      * @return 假
      */
+    @SuppressWarnings("unused")
     @Override
     public boolean execute(Game game) {
         Room currentRoom = game.getCurrentRoom();

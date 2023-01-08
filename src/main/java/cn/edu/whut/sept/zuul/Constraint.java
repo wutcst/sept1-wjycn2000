@@ -4,8 +4,8 @@
 package cn.edu.whut.sept.zuul;
 
 public class Constraint {
-    private Room from;
-    private Room to;
+    private final Room from;
+    private final Room to;
 
     /**
      * 创建限制

@@ -4,9 +4,9 @@
 package cn.edu.whut.sept.zuul;
 
 public class Item {
-    private String name;
-    private String description;
-    private float weight;
+    private final String name;
+    private final String description;
+    private final float weight;
 
     /**
      * 创建物品对象
